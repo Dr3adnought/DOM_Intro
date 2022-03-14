@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Document</title>
+<style>
+    body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .result,
+    .sample {
+        font-size: 18px;
+        font-weight: 500;
+        color: red;
+    }
+</style>
+</head>
+<body>
+<h1>innerHTML vs innerText</h1>
+<div class="sample">Hello <b>World</b> <i>Some Text</i></div>
+<div class="result">innerHTML =</div>
+<div class="result">innerText =</div>
+<div class="result">textContent =</div>
+<button class="Btn">Click here</button>
+<h3>Click on the above button to see the innerText, innerHTML & textContent result for
+the above paragraph</h3>
+<script>
+    let BtnEle = document.querySelector(".Btn");
+    let resEle = document.querySelectorAll(".result");
+    let sampleEle = document.querySelector(".sample");
+    let a;
+    BtnEle.addEventListener("click", () => {
+        resEle[0].innerHTML += sampleEle.innerHTML;
+        resEle[1].innerHTML += sampleEle.innerText;
+        resEle[2].innerHTML += sampleEle.textContent;
+    });
+</script>
+</body>
+</html>
